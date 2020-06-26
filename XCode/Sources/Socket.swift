@@ -8,17 +8,17 @@
 import Foundation
 
 public enum SocketError: Error {
-    case socketCreationFailed(String)
-    case socketSettingReUseAddrFailed(String)
-    case bindFailed(String)
-    case listenFailed(String)
-    case writeFailed(String)
-    case getPeerNameFailed(String)
+    case socketCreationFailed(String) //swiftlint:disable:this identifier_name
+    case socketSettingReUseAddrFailed(String) //swiftlint:disable:this identifier_name
+    case bindFailed(String) //swiftlint:disable:this identifier_name
+    case listenFailed(String) //swiftlint:disable:this identifier_name
+    case writeFailed(String) //swiftlint:disable:this identifier_name
+    case getPeerNameFailed(String) //swiftlint:disable:this identifier_name
     case convertingPeerNameFailed
-    case getNameInfoFailed(String)
-    case acceptFailed(String)
-    case recvFailed(String)
-    case getSockNameFailed(String)
+    case getNameInfoFailed(String) //swiftlint:disable:this identifier_name
+    case acceptFailed(String) //swiftlint:disable:this identifier_name
+    case recvFailed(String) //swiftlint:disable:this identifier_name
+    case getSockNameFailed(String) //swiftlint:disable:this identifier_name
 }
 
 // swiftlint: disable identifier_name

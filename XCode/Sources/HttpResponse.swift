@@ -22,12 +22,12 @@ public protocol HttpResponseBodyWriter {
 
 public enum HttpResponseBody {
 
-    case json(Any)
-    case html(String)
-    case htmlBody(String)
-    case text(String)
-    case data(Data)
-    case custom(Any, (Any) throws -> String)
+    case json(Any) //swiftlint:disable:this identifier_name
+    case html(String) //swiftlint:disable:this identifier_name
+    case htmlBody(String) //swiftlint:disable:this identifier_name
+    case text(String) //swiftlint:disable:this identifier_name
+    case data(Data) //swiftlint:disable:this identifier_name
+    case custom(Any, (Any) throws -> String) //swiftlint:disable:this identifier_name
 
     func content() -> (Int, ((HttpResponseBodyWriter) throws -> Void)?) {
         do {
@@ -79,13 +79,13 @@ public enum HttpResponseBody {
 // swiftlint:disable cyclomatic_complexity
 public enum HttpResponse {
 
-    case switchProtocols([String: String], (Socket) -> Void)
-    case ok(HttpResponseBody), created, accepted
-    case movedPermanently(String)
-    case movedTemporarily(String)
-    case badRequest(HttpResponseBody?), unauthorized, forbidden, notFound
+    case switchProtocols([String: String], (Socket) -> Void) //swiftlint:disable:this identifier_name
+    case ok(HttpResponseBody), created, accepted //swiftlint:disable:this identifier_name
+    case movedPermanently(String) //swiftlint:disable:this identifier_name
+    case movedTemporarily(String) //swiftlint:disable:this identifier_name
+    case badRequest(HttpResponseBody?), unauthorized, forbidden, notFound //swiftlint:disable:this identifier_name
     case internalServerError
-    case raw(Int, String, [String:String]?, ((HttpResponseBodyWriter) throws -> Void)? )
+    case raw(Int, String, [String:String]?, ((HttpResponseBodyWriter) throws -> Void)? ) //swiftlint:disable:this identifier_name
 
     public var statusCode: Int {
         switch self {

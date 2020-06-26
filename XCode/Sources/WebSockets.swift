@@ -147,7 +147,7 @@ public func websocket(
 
 public class WebSocketSession: Hashable, Equatable {
 
-    public enum WsError: Error { case unknownOpCode(String), unMaskedFrame(String), protocolError(String), invalidUTF8(String) }
+    public enum WsError: Error { case unknownOpCode(String), unMaskedFrame(String), protocolError(String), invalidUTF8(String) } //swiftlint:disable:this identifier_name
     public enum OpCode: UInt8 { case `continue` = 0x00, close = 0x08, ping = 0x09, pong = 0x0A, text = 0x01, binary = 0x02 }
     public enum Control: Error { case close }
 

@@ -180,7 +180,7 @@ open class HttpRouter {
 extension String {
 
     func split(_ separator: Character) -> [String] {
-        return self.split { $0 == separator }.map(String.init)
+//        return self.split { $0 == separator }.map(String.init)
+        return [] // xcode 12 issue
     }
-
 }

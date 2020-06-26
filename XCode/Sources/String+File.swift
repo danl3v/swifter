@@ -10,7 +10,7 @@ import Foundation
 extension String {
 
     public enum FileError: Error {
-        case error(Int32)
+        case error(Int32) //swiftlint:disable:this identifier_name
     }
 
     public class File {

@@ -8,7 +8,7 @@
 import Foundation
 
 enum HttpParserError: Error {
-    case invalidStatusLine(String)
+    case invalidStatusLine(String) //swiftlint:disable:this identifier_name
 }
 
 public class HttpParser {
@@ -17,7 +17,7 @@ public class HttpParser {
 
     public func readHttpRequest(_ socket: Socket) throws -> HttpRequest {
         let statusLine = try socket.readLine()
-        let statusLineTokens = statusLine.components(separatedBy: " ")
+        let statusLineTokens = statusLine.split(" ")
         if statusLineTokens.count < 3 {
             throw HttpParserError.invalidStatusLine(statusLine)
         }
@@ -32,7 +32,7 @@ public class HttpParser {
             request.body = try readBody(socket, size: contentLengthValue)
         }
         return request
-        }
+    }
 
     private func readBody(_ socket: Socket, size: Int) throws -> [UInt8] {
         return try socket.read(length: size)
